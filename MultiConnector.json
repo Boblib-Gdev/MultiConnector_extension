@@ -8,7 +8,7 @@
   "name": "MultiConnector",
   "previewIconUrl": "",
   "shortDescription": "This extension provides menus to select the differents adapters possible to connect multiplayers using THNK extension (this is not an official THNK extension)",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": [
     "General Note : still in development, with buggs, help welcome.",
     "",
@@ -664,18 +664,6 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "PlaySound"
-                      },
-                      "parameters": [
-                        "",
-                        "6e198ce7d52b08feb4a8978f55f5e00642a22048d58883d6c5103d3df84171fa_1up 3.aac",
-                        "",
-                        "",
-                        ""
-                      ]
-                    },
-                    {
-                      "type": {
                         "value": "Wait"
                       },
                       "parameters": [
@@ -721,14 +709,10 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "PlaySound"
+                        "value": "Cache"
                       },
                       "parameters": [
-                        "",
-                        "5151aab7b2974cafe47880b1460939d5903ed828d1c62ccae62ee60a3235fb8e_1up 7.aac",
-                        "",
-                        "",
-                        ""
+                        "P2PServerStart"
                       ]
                     },
                     {
@@ -736,7 +720,15 @@
                         "value": "Cache"
                       },
                       "parameters": [
-                        "StartP2p"
+                        "P2PConnectClient"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "P2PPaste"
                       ]
                     },
                     {
@@ -752,10 +744,56 @@
                         "value": "Montre"
                       },
                       "parameters": [
-                        "StartP2p",
+                        "P2PServerStart",
                         ""
                       ]
                     },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "P2PConnectClient",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "P2PPaste",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "StartP2p",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
                     {
                       "type": {
                         "value": "MultiConnector::HideAllLayers"
@@ -812,14 +850,18 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "PlaySound"
+                        "value": "Cache"
                       },
                       "parameters": [
-                        "",
-                        "6e198ce7d52b08feb4a8978f55f5e00642a22048d58883d6c5103d3df84171fa_1up 3.aac",
-                        "",
-                        "",
-                        ""
+                        "LocalServerStart"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "LocalConnectClient"
                       ]
                     },
                     {
@@ -827,9 +869,55 @@
                         "value": "Wait"
                       },
                       "parameters": [
-                        "1"
+                        "0.5"
                       ]
                     },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "LocalServerStart",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "LocalConnectClient",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "StartLocal",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
                     {
                       "type": {
                         "value": "MultiConnector::HideAllLayers"
@@ -877,14 +965,26 @@
                   "actions": [
                     {
                       "type": {
-                        "value": "PlaySound"
+                        "value": "Cache"
                       },
                       "parameters": [
-                        "",
-                        "6e198ce7d52b08feb4a8978f55f5e00642a22048d58883d6c5103d3df84171fa_1up 3.aac",
-                        "",
-                        "",
-                        ""
+                        "GeckoServerStart"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "GeckoConnectClient"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "GeckoPaste"
                       ]
                     },
                     {
@@ -892,9 +992,64 @@
                         "value": "Wait"
                       },
                       "parameters": [
-                        "1"
+                        "0.5"
                       ]
                     },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "GeckoServerStart",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "GeckoConnectClient",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Montre"
+                      },
+                      "parameters": [
+                        "GeckoPaste",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "SourisSurObjet"
+                      },
+                      "parameters": [
+                        "StartGecko",
+                        "",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    }
+                  ],
+                  "actions": [
                     {
                       "type": {
                         "value": "MultiConnector::HideAllLayers"
@@ -1706,7 +1861,7 @@
       "objects": [
         {
           "assetStoreId": "",
-          "bold": true,
+          "bold": false,
           "italic": false,
           "name": "GeneralMenuTitle",
           "smoothed": true,
@@ -1715,7 +1870,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Multiplayer-Connector (with THNK unofficial). This screen is using an EXTENSION providing THNK multiplayer tools... in creation...",
+          "string": "MultiConnector extension (with THNK unofficial). This screen is using an EXTENSION providing THNK multiplayer tools... in creation...\nClkick on text with gray outline (buttons) to chose your multiplayer mode.",
           "font": "",
           "textAlignment": "left",
           "characterSize": 20,
@@ -1725,7 +1880,7 @@
             "r": 0
           },
           "content": {
-            "bold": true,
+            "bold": false,
             "isOutlineEnabled": false,
             "isShadowEnabled": false,
             "italic": false,
@@ -1738,7 +1893,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Multiplayer-Connector (with THNK unofficial). This screen is using an EXTENSION providing THNK multiplayer tools... in creation...",
+            "text": "MultiConnector extension (with THNK unofficial). This screen is using an EXTENSION providing THNK multiplayer tools... in creation...\nClkick on text with gray outline (buttons) to chose your multiplayer mode.",
             "font": "",
             "textAlignment": "left",
             "verticalTextAlignment": "top",
@@ -1938,11 +2093,11 @@
             "isOutlineEnabled": true,
             "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -1977,7 +2132,7 @@
           },
           "content": {
             "bold": false,
-            "isOutlineEnabled": true,
+            "isOutlineEnabled": false,
             "isShadowEnabled": false,
             "italic": false,
             "outlineColor": "74;74;74",
@@ -2019,7 +2174,7 @@
           },
           "content": {
             "bold": false,
-            "isOutlineEnabled": true,
+            "isOutlineEnabled": false,
             "isShadowEnabled": false,
             "italic": false,
             "outlineColor": "255;255;255",
@@ -2061,7 +2216,7 @@
           },
           "content": {
             "bold": false,
-            "isOutlineEnabled": true,
+            "isOutlineEnabled": false,
             "isShadowEnabled": false,
             "italic": false,
             "outlineColor": "230;98;98",
@@ -2229,14 +2384,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2336,14 +2491,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2378,14 +2533,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2420,14 +2575,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2573,14 +2728,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2615,14 +2770,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2657,14 +2812,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2741,14 +2896,14 @@
           },
           "content": {
             "bold": true,
-            "isOutlineEnabled": false,
-            "isShadowEnabled": false,
+            "isOutlineEnabled": true,
+            "isShadowEnabled": true,
             "italic": false,
-            "outlineColor": "255;255;255",
+            "outlineColor": "155;155;155",
             "outlineThickness": 2,
             "shadowAngle": 90,
             "shadowBlurRadius": 2,
-            "shadowColor": "0;0;0",
+            "shadowColor": "155;155;155",
             "shadowDistance": 4,
             "shadowOpacity": 127,
             "smoothed": true,
@@ -2814,7 +2969,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Incorrect IP address",
+          "string": "Check again IP address",
           "font": "",
           "textAlignment": "center",
           "characterSize": 40,
@@ -2837,7 +2992,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Incorrect IP address",
+            "text": "Check again IP address",
             "font": "",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
@@ -2856,7 +3011,7 @@
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "string": "Incorrect IP address",
+          "string": "Check again IP address",
           "font": "",
           "textAlignment": "center",
           "characterSize": 40,
@@ -2879,7 +3034,7 @@
             "shadowOpacity": 127,
             "smoothed": true,
             "underlined": false,
-            "text": "Incorrect IP address",
+            "text": "Check again IP address",
             "font": "",
             "textAlignment": "center",
             "verticalTextAlignment": "center",
@@ -2933,7 +3088,7 @@
           "content": {
             "bold": false,
             "isOutlineEnabled": false,
-            "isShadowEnabled": true,
+            "isShadowEnabled": false,
             "italic": true,
             "outlineColor": "255;255;255",
             "outlineThickness": 2,
@@ -3296,22 +3451,6 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "A_Supprimer",
-          "name": "GreyButton_test_asupprimer",
-          "persistentUuid": "3f1b7016-7fcc-4e07-a5ca-5c916cccea76",
-          "width": 0,
-          "x": 1242,
-          "y": 427,
-          "zOrder": 7,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
           "customSize": true,
           "depth": 48,
           "height": 211,
@@ -3337,8 +3476,8 @@
           "name": "StartSingle",
           "persistentUuid": "2613355c-f761-4dad-8eed-3430549bc155",
           "width": 317,
-          "x": 31,
-          "y": 68,
+          "x": 418,
+          "y": 43,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -3369,8 +3508,8 @@
           "name": "StartP2p",
           "persistentUuid": "5370645a-a730-4463-9f3e-413d9318b7e2",
           "width": 0,
-          "x": 81,
-          "y": 203,
+          "x": 82,
+          "y": 213,
           "zOrder": 11,
           "numberProperties": [],
           "stringProperties": [],
@@ -3401,8 +3540,8 @@
           "name": "ReturnToGeneral",
           "persistentUuid": "8589dab6-f8a0-4c74-9945-b6e02a95a09e",
           "width": 0,
-          "x": 157,
-          "y": 654,
+          "x": 46,
+          "y": 655,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -3417,8 +3556,8 @@
           "name": "ReturnToGeneral",
           "persistentUuid": "b1267494-a5b8-44d0-8ab0-192b69f717fe",
           "width": 0,
-          "x": 141,
-          "y": 666,
+          "x": 42,
+          "y": 652,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -3433,8 +3572,8 @@
           "name": "ReturnToGeneral",
           "persistentUuid": "04543f60-43d8-4290-998c-b07a73c0cd46",
           "width": 0,
-          "x": 143,
-          "y": 660,
+          "x": 54,
+          "y": 662,
           "zOrder": 14,
           "numberProperties": [],
           "stringProperties": [],
@@ -3449,26 +3588,9 @@
           "name": "ReturnToGeneral",
           "persistentUuid": "727d2985-cb86-4518-9bb0-1a1422f592f0",
           "width": 0,
-          "x": 135,
-          "y": 651,
+          "x": 56,
+          "y": 666,
           "zOrder": 15,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 48,
-          "height": 249,
-          "keepRatio": true,
-          "layer": "A_Supprimer",
-          "name": "chooseP2Pbutton_asupprimer",
-          "persistentUuid": "b4307dd8-0051-44fb-b99b-718ce4568b90",
-          "width": 1112,
-          "x": 1244,
-          "y": 97,
-          "zOrder": 17,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3759,8 +3881,8 @@
           "name": "InProgress",
           "persistentUuid": "1aca09ac-b209-413c-8162-c87f4be465f4",
           "width": 0,
-          "x": 390,
-          "y": 79,
+          "x": 125,
+          "y": 102,
           "zOrder": 35,
           "numberProperties": [],
           "stringProperties": [],
@@ -3825,8 +3947,8 @@
           "name": "GamesceneShow",
           "persistentUuid": "1099aae2-996f-4fc5-bf28-6a7bd4475f29",
           "width": 0,
-          "x": 28,
-          "y": 44,
+          "x": 22,
+          "y": 70,
           "zOrder": 102,
           "numberProperties": [],
           "stringProperties": [],
